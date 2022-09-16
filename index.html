@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./modal.css" />
+        <link rel="stylesheet" href="./table.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
+        <title>Test</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Created</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Dates</th>
+                    <th>icons</th>
+                </tr>
+            </thead>
+            <tbody id="table-content"></tbody>
+        </table>
+
+        <button id="myBtn" style="margin-top: 4px; background-color: #0298cf">
+            Open modal
+        </button>
+
+        <div id="modals"></div>
+
+        <table class="archive">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Created</th>
+                    <th>Category</th>
+                    <th>Content</th>
+                    <th>Dates</th>
+                    <th>icons</th>
+                </tr>
+            </thead>
+            <tbody id="archive-table-content"></tbody>
+        </table>
+
+        <table class="count">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Active</th>
+                    <th>archived</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Task</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Random Thought</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Quote</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>Idea</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- templates -->
+        <template id="tableRow">
+            <tr>
+                <td data-type="name"></td>
+                <td data-type="created"></td>
+                <td data-type="category"></td>
+                <td data-type="content"></td>
+                <td data-type="dates"></td>
+
+                <td data-type="buttons">
+                    <button>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button>
+                        <i class="fa-sharp fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </template>
+
+        <!-- modal window -->
+        <template id="modal-template">
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <h2>Create New Task</h2>
+                    <form>
+                        <div class="input-group">
+                            <label>Task name:</label>
+                            <input
+                                name="name"
+                                type="text"
+                                placeholder="input name..."
+                            />
+                        </div>
+
+                        <div class="input-group">
+                            <label>Category:</label>
+                            <select name="category">
+                                <option>Task</option>
+                                <option>Quote</option>
+                                <option>Random Thought</option>
+                                <option>Idea</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Content:</label>
+                            <textarea
+                                name="content"
+                                placeholder="input text here"
+                            ></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Dates:</label>
+                            <input name="dates" type="date" />
+                        </div>
+                        <button type="submit">submit</button>
+                    </form>
+
+                    <button id="close">Close</button>
+                </div>
+            </div>
+        </template>
+        <script type="module" src="./modal.js"></script>
+        <script type="module" src="./initialization.js"></script>
+        <script type="module" src="./state.js"></script>
+    </body>
+</html>
