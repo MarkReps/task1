@@ -1,0 +1,21 @@
+form{
+    padding: 20px;
+}
+
+form div{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form label{
+    padding-right: 10px;
+}
+
+input,textarea{
+    flex-grow: 1;
+    font-size: 15px;
+}
+
+.form-btn-container{
+    justify-content: end;
+}
